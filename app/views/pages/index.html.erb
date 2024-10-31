@@ -1,0 +1,91 @@
+Waitting...
+<script>
+var _affirm_config = {
+		public_api_key: "8MZVGYL52617NMCR", /* replace with public api key */
+		script: "https://cdn1-sandbox.affirm.com/js/v2/affirm.js",
+		locale: "en_US",
+		country_code: "USA",
+	};
+
+(function(m,g,n,d,a,e,h,c){var b=m[n]||{},k=document.createElement(e),p=document.getElementsByTagName(e)[0],l=function(a,b,c){return function(){a[b]._.push([c,arguments])}};b[d]=l(b,d,"set");var f=b[d];b[a]={};b[a]._=[];f._=[];b._=[];b[a][h]=l(b,a,h);b[c]=function(){b._.push([h,arguments])};a=0;for(c="set add save post open empty reset on off trigger ready setProduct".split(" ");a<c.length;a++)f[c[a]]=l(b,d,c[a]);a=0;for(c=["get","token","url","items"];a<c.length;a++)f[c[a]]=function(){};k.async=
+  !0;k.src=g[e];p.parentNode.insertBefore(k,p);delete g[e];f(g);m[n]=b})(window,_affirm_config,"affirm","checkout","ui","script","ready","jsReady");
+
+affirm.checkout({
+
+      "merchant": {
+        "user_confirmation_url":    "http://localhost:3000/confirm",
+        "user_cancel_url":          "http://localhost:3000/cancel",
+        "public_api_key":  "8MZVGYL52617NMCR",
+        "user_confirmation_url_action": "POST",
+        "name": "Your Customer-Facing Merchant Name"
+      },
+      "shipping":{
+        "name":{
+          "first":"Joe",
+          "last":"Doe"
+        },
+        "address":{
+          "line1":"633 Folsom St",
+          "line2":"Floor 7",
+          "city":"San Francisco",
+          "state":"CA",
+          "zipcode":"94107",
+          "country":"USA"
+        },
+        "phone_number": "4153334567",
+        "email": "joedoe@123fakestreet.com"
+      },
+      "billing":{
+        "name":{
+          "first":"Joe",
+          "last":"Doe"
+        },
+        "address":{
+          "line1":"633 Folsom St",
+          "line2":"Floor 7",
+          "city":"San Francisco",
+          "state":"CA",
+          "zipcode":"94107",
+          "country":"USA"
+        },
+        "phone_number": "4153334567",
+        "email": "joedoe@123fakestreet.com"
+      },
+      "items": [{
+        "display_name":         "Awesome Pants",
+        "sku":                  "ABC-123",
+        "unit_price":           10000,
+        "qty":                  3,
+        "item_image_url":       "http://merchantsite.com/images/awesome-pants.jpg",
+        "item_url":             "http://merchantsite.com/products/awesome-pants.html",
+        "categories": [
+            ["Home", "Bedroom"],
+            ["Home", "Furniture", "Bed"]
+        ]
+      }
+   ],
+      "discounts":{
+         "RETURN5":{
+            "discount_amount":500,
+            "discount_display_name":"Returning customer 5% discount"
+        },
+        "PRESDAY10":{
+            "discount_amount":1000,
+            "discount_display_name":"President's Day 10% off"
+      }
+   },
+   "metadata":{
+      "shipping_type":"UPS Ground",
+      "mode":"modal"
+   },
+   "order_id":"JKLMO4321",
+   "currency":"USD",
+   "financing_program":"flyus_3z6r12r",
+   "shipping_amount":1000,
+   "tax_amount":600,
+   "total":30100
+})
+
+affirm.checkout.open()
+
+</script>

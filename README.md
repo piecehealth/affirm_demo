@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install Ruby 3.3.5
+See https://rvm.io/
 
-Things you may want to cover:
+## Install the dependencies
+`./bin/setup`
 
-* Ruby version
+## Start the web server
+`/bin/dev`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Reproduce the issue
+Open your browser and go to `http://localhost:3000` to reproduce the issue.
